@@ -10,7 +10,7 @@ actually works only with MacOS X
 
 ### Installing
 When you start the program the first time, it will ask you to edit a file that created for you, it will be a txt file with SSID and DNS pairs.
-With the following Synopsis
+<br>With the following Synopsis
 SSID | DNS1 DNS2;
 ```sh
 $ bash Wi-Fi-DNS.sh
