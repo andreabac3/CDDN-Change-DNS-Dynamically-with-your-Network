@@ -30,6 +30,6 @@ if [[ $os -eq "Darwin" ]]; then
     wifiName=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}')
     card=$(networksetup -listallnetworkservices | grep Wi-Fi)
     dns=$(cat $dnsConfig | grep "$wifiName" | sed -e 's/\(^.*|\)\(.*\)\(;.*$\)/\2/')
-    $(networksetup -setdnsservers Wi-Fi $dns) && echo "I have correctly set the DNS $dns for the SSID network called $wifiName"
+    $(networksetup -setdnsservers Wi-Fi $dns) && echo "I have correctly set the DNS $dns for the network with SSID $wifiName"
     exit 0 
 fi
