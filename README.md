@@ -23,8 +23,8 @@ You have the option -l as the list, to list all pair in your configuration
 ```sh
 $ bash Wi-Fi-DNS.sh -l
 replace_with_name_of_your_Wifi | 1.1.1.1 1.0.0.1 ;
-Bacciu Wi-Fi 2.4GHz | 208.67.222.222 208.67.220.220 ;
-Bacciu Wi-Fi 5GHz | 8.8.8.8 8.8.4.4 ;
+FritzBox Wi-Fi 2.4GHz | 208.67.222.222 208.67.220.220 ;
+FritzBox Wi-Fi 5GHz | 8.8.8.8 8.8.4.4 ;
 ```
 
 
@@ -34,7 +34,7 @@ After correctly setting up the configuration file, we can move on to running the
 If the name of your current Wi-Fi is on the list, your DNS will be changed.
 ```sh
 $ bash Wi-Fi-DNS.sh
-I have correctly set the DNS 1.1.1.1 1.0.0.1 for the SSID network called FRITZ!Box 4040 2.4GHz
+I have correctly set the DNS 1.1.1.1 1.0.0.1 for the SSID network called FritzBox Wi-Fi 2.4GHz
 ```
 
 ## Authors
