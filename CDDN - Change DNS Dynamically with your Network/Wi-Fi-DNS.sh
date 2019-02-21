@@ -17,8 +17,8 @@ if [[ ! -e $dnsConfig ]]; then
 fi
 
 PATTERN="replace_with_name_of_your_Wifi"
-if [ $(cat $dnsConfig  | wc -l) -eq "1" ]; then
-   if grep -q $PATTERN $dnsConfig ; then
+if [ $(wc -l "dnsConfig.txt" | grep -o "[0-9]\+" ) -eq "0" ]; then
+   if [ ! $(cat $dnsConfig | grep -q $PATTERN) ]; then
         echo "Modify $dnsConfig  with your custom settings & restart the .sh"
         exit 1
     fi 
@@ -31,4 +31,5 @@ if [[ $os -eq "Darwin" ]]; then
     card=$(networksetup -listallnetworkservices | grep Wi-Fi)
     dns=$(cat $dnsConfig | grep "$wifiName" | sed -e 's/\(^.*|\)\(.*\)\(;.*$\)/\2/')
     $(networksetup -setdnsservers Wi-Fi $dns) && echo "I'have correctly set the DNS $dns for the SSID network called $wifiName"
+    exit 0 
 fi
