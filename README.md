@@ -34,7 +34,7 @@ After correctly setting up the configuration file, we can move on to running the
 If the name of your current Wi-Fi is on the list, your DNS will be changed.
 ```sh
 $ bash Wi-Fi-DNS.sh
-I have correctly set the DNS 208.67.222.222 208.67.220.220 for the SSID network called FritzBox Wi-Fi 2.4GHz
+I have correctly set the DNS 208.67.222.222 208.67.220.220 for the network with the SSID FritzBox Wi-Fi 2.4GHz
 ```
 
 ## Authors
