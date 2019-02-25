@@ -6,7 +6,7 @@ This script allows you to have the best configuration of your DNS when switching
 ### Prerequisites
 ```
 The program works for MacOS X && Distro Linux.
-If you are Linux User, the program will ask to you Sudo permission.
+If you are Linux User, the program will ask to you Sudo permission and the iwgetid program.
 ```
 
 ### Installing
