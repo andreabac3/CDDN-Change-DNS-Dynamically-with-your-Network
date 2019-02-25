@@ -8,8 +8,7 @@
 
 dnsConfig="dnsConfig.txt"
 
-
-while getopts l:t option
+while getopts lt option
     do
     case "${option}"
     in
@@ -17,6 +16,7 @@ while getopts l:t option
     t) echo $(dig "www.google.com") && exit 0;;
     esac
 done
+
 
 if [[ ! -e "$dnsConfig" ]]; then
     touch "$dnsConfig"  && echo "replace_with_name_of_your_Wifi | 1.1.1.1 1.0.0.1 ;" >> "$dnsConfig" 
