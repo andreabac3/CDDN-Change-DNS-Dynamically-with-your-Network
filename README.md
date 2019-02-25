@@ -5,7 +5,8 @@ This script allows you to have the best configuration of your DNS when switching
 
 ### Prerequisites
 ```
-actually works only with MacOS X
+The program works for MacOS X && Distro Linux.
+If you are Linux User, the program will ask to you Sudo permission.
 ```
 
 ### Installing
@@ -24,7 +25,8 @@ replace_with_name_of_your_Wifi | 1.1.1.1 1.0.0.1 ;
 FritzBox Wi-Fi 2.4GHz | 208.67.222.222 208.67.220.220 ;
 FritzBox Wi-Fi 5GHz | 8.8.8.8 8.8.4.4 ;
 ```
-
+You have the option -t as the test, for testing the correct configuration of your DNS.
+The option -t execute simple command dig to google.com
 
 ### Program execution
 
