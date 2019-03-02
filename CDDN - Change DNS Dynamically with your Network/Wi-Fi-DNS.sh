@@ -34,7 +34,7 @@ if [ $(wc -l "$dnsConfig" | grep -o "[0-9]\+" ) -eq "0" ]; then
 fi
 
 function macOS {
-	wifiName=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}')
+    wifiName=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}')
     dns=$(cat $dnsConfig | grep "$wifiName" | sed -e 's/\(^.*|\)\(.*\)\(;.*$\)/\2/')
     card=$(networksetup -listallnetworkservices | grep Wi-Fi)
     $(networksetup -setdnsservers Wi-Fi $dns) && echo "I have correctly set the DNS $dns for the network with SSID $wifiName"
