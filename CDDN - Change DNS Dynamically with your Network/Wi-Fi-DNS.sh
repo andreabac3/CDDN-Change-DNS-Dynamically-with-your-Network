@@ -1,8 +1,4 @@
-#!/bin/bash 
-
-
-# todo https://askubuntu.com/questions/117065/how-do-i-find-out-the-name-of-the-ssid-im-connected-to-from-the-command-line
-
+#!/bin/bash
 
 
 
