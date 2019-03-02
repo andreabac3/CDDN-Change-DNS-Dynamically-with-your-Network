@@ -56,7 +56,7 @@ os=$(uname)
 if [ "$os" == "Darwin" ]; then 
     macOS
 elif [ "$os" == "Linux" ]; then
-	Linux
+    Linux
 fi
 
 
