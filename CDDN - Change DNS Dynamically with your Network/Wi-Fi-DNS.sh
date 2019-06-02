@@ -1,15 +1,25 @@
 #!/bin/bash
-
-
-
 dnsConfig="dnsConfig.txt"
+os=$(uname)
 
-while getopts lt option
+function saveConfiguration {
+    if [ "$os" == "Darwin" ]; then 
+        wifiName=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}')
+    elif [ "$os" == "Linux" ]; then
+        wifiName=$(iwgetid -r)
+    fi
+    first=$(grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" "/etc/resolv.conf" | sed -n 2p)
+    second=$(grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" "/etc/resolv.conf"| sed -n 2p)
+    echo -e "\n$wifiName | $first  $second ;" >> "$dnsConfig"  && echo "I have saved your current configuration" && exit 0
+}
+while getopts lts option
     do
     case "${option}"
     in
     l) echo $(cat "$dnsConfig") && exit 0;;
     t) echo $(dig "www.google.com") && exit 0;;
+    s) echo $(saveConfiguration) && exit 0;;
+
     esac
 done
 
@@ -36,7 +46,7 @@ function macOS {
     $(networksetup -setdnsservers Wi-Fi $dns) && echo "I have correctly set the DNS $dns for the network with SSID $wifiName"
     exit 0
 }
-function Linux {
+function linux {
     [ "$UID" -eq 0 ] || exec sudo bash "$0" "$@" 
     wifiName=$(iwgetid -r)
     dns=$(cat $dnsConfig | grep "$wifiName" | sed -e 's/\(^.*|\)\(.*\)\(;.*$\)/\2/')
@@ -45,14 +55,11 @@ function Linux {
     dns2=$(echo "$dns"  | head -n1 | awk '{print $2;}')
     sudo echo -e  "nameserver $dns1\nnameserver $dns2" >> "/etc/resolv.conf" && echo "I have correctly set the DNS $dns for the network with SSID $wifiName" && exit 0
 }
-os=$(uname)
-
-
 
 if [ "$os" == "Darwin" ]; then 
     macOS
 elif [ "$os" == "Linux" ]; then
-    Linux
+    linux
 fi
 
 
