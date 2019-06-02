@@ -18,6 +18,7 @@ $ bash Wi-Fi-DNS.sh
 Modify dnsConfig.txt with your custom settings & restart the .sh
 ```
 ## Options
+### List configuration
 You have the option -l as the list, to list all pair in your configuration
 ```sh
 $ bash Wi-Fi-DNS.sh -l
@@ -25,11 +26,13 @@ replace_with_name_of_your_Wifi | 1.1.1.1 1.0.0.1 ;
 FritzBox Wi-Fi 2.4GHz | 208.67.222.222 208.67.220.220 ;
 FritzBox Wi-Fi 5GHz | 8.8.8.8 8.8.4.4 ;
 ```
+### Save configuration
 You have the option -s to save your current DNS configuration directly inside the configuration file.
 ```sh
 $ bash Wi-Fi-DNS.sh -s
 CDDN has saved your current DNS configuration
 ```
+### Test configuration
 You have the option -t as the test, for testing the correct configuration of your DNS.
 The option -t execute simple command dig to google.com
 
