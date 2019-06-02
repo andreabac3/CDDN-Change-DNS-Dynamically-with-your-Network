@@ -36,7 +36,7 @@ CDDN has saved your current DNS configuration
 You have the option -t as the test, for testing the correct configuration of your DNS.
 The option -t execute simple command dig to google.com
 
-### Program execution
+## Program execution
 
 After correctly setting up the configuration file, we can move on to running the program.
 If the name of your current Wi-Fi is on the list, your DNS will be changed.
