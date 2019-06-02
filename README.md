@@ -25,6 +25,11 @@ replace_with_name_of_your_Wifi | 1.1.1.1 1.0.0.1 ;
 FritzBox Wi-Fi 2.4GHz | 208.67.222.222 208.67.220.220 ;
 FritzBox Wi-Fi 5GHz | 8.8.8.8 8.8.4.4 ;
 ```
+You have the option -s to save your current DNS configuration directly inside the configuration file.
+```sh
+$ bash Wi-Fi-DNS.sh -s
+CDDN has saved your current DNS configuration
+```
 You have the option -t as the test, for testing the correct configuration of your DNS.
 The option -t execute simple command dig to google.com
 
@@ -44,5 +49,3 @@ I have correctly set the DNS 208.67.222.222 208.67.220.220 for the network with 
 ## License
 [![](https://img.shields.io/npm/l/unique-names-generator.svg)](https://github.com/andreasonny83/unique-names-generator/blob/master/LICENSE)
 This project is licensed under the MIT License - see the MIT license online for details
-
-
