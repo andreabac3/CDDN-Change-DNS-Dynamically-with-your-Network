@@ -8,9 +8,9 @@ function saveConfiguration {
     elif [ "$os" == "Linux" ]; then
         wifiName=$(iwgetid -r)
     fi
-    first=$(grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" "/etc/resolv.conf" | sed -n 2p)
+    first=$(grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" "/etc/resolv.conf" | sed -n 1p)
     second=$(grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" "/etc/resolv.conf"| sed -n 2p)
-    echo -e "\n$wifiName | $first  $second ;" >> "$dnsConfig"  && echo "I have saved your current configuration" && exit 0
+    echo -e "\n$wifiName | $first  $second ;" >> "$dnsConfig"  && echo "CDDN has saved your current DNS configuration" && exit 0
 }
 while getopts lts option
     do
@@ -19,7 +19,6 @@ while getopts lts option
     l) echo $(cat "$dnsConfig") && exit 0;;
     t) echo $(dig "www.google.com") && exit 0;;
     s) echo $(saveConfiguration) && exit 0;;
-
     esac
 done
 
