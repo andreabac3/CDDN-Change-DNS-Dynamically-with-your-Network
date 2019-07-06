@@ -45,10 +45,10 @@ $ bash Wi-Fi-DNS.sh
 I have correctly set the DNS 208.67.222.222 208.67.220.220 for the network with the SSID FritzBox Wi-Fi 2.4GHz
 ```
 
-## Authors
+# Authors
 
 * **Andrea Bacciu**  - [github](https://github.com/andreabac3)
 
-## License
+# License
 [![](https://img.shields.io/npm/l/unique-names-generator.svg)](https://github.com/andreasonny83/unique-names-generator/blob/master/LICENSE)
 This project is licensed under the MIT License - see the MIT license online for details
